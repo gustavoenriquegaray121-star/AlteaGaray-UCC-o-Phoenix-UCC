@@ -1,3 +1,6 @@
+# Arquitectura General Phoenix-UCC
+
+```mermaid
 graph TD
 A[Sensores Criogénicos] --> B[Interfaz AXI4-Lite]
 B --> C[Filtro Binomial Multitap]
