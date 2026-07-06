@@ -1,16 +1,13 @@
 graph TD
-    A[Sensores Criogénicos] --> B[Interfaz AXI4-Lite]
-    B --> C[Filtro Binomial Multitap]
+    A[Sensores] --> B[AXI4 Interface]
+    B --> C[Filtro Binomial]
     C --> D[PHSE Core]
-    D --> E[Predictor Híbrido Binomial]
-    E --> F[Analizador de Trayectoria]
-    F --> G[Índice de Estabilidad]
-    G --> H{Riesgo de Quench?}
-    H -->|Sí| I[Alerta Predictiva + Actuación]
+    D --> E[Predictor Binomial]
+    E --> F[Trayectoria]
+    F --> G[Estabilidad]
+    G --> H{Riesgo Quench?}
+    H -->|Sí| I[Alerta + Actuación]
     H -->|No| J[Control Normal]
-    I --> K[Watchdog Controller]
+    I --> K[Watchdog]
     J --> K
-    K --> L[Actuadores Criogénicos]
-
-    style D fill:#1e3a8a,stroke:#60a5fa,stroke-width:3px
-    style G fill:#166534,stroke:#4ade80
+    K --> L[Actuadores]
