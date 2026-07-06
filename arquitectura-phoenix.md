@@ -3,12 +3,12 @@ A[Sensores Criogénicos] --> B[Interfaz AXI4-Lite]
 B --> C[Filtro Binomial Multitap]
 C --> D[PHSE Core Estimación Predictiva]
 D --> E[Predictor Híbrido Binomial]
-E --> F[Analizador Trayectoria Velocidad Sacudida]
-F --> G[Indice Estabilidad Homeostatica]
+E --> F[Analizador Trayectoria]
+F --> G[Indice Estabilidad]
 G --> H{Riesgo de Quench?}
-H -->|Si| I[Alerta + Accion Preventiva]
+H -->|Si| I[Alerta + Accion]
 H -->|No| J[Control Estandar]
-I --> K[Watchdog Degradacion Respaldo PID]
+I --> K[Watchdog PID]
 J --> K
 K --> L[Actuadores Criogenicos]
 
