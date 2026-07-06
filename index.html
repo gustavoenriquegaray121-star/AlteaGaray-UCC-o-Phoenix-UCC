@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phoenix-UCC v7.3 — IP Core License | ALTEA-GARAY HTS</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#F8FAFC;color:#0F172A}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,#0F172A 0%,#1E40AF 100%);padding:48px 24px;text-align:center;color:#fff}
+.badge{background:#3B82F6;color:#fff;font-size:11px;font-weight:800;letter-spacing:1.5px;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:16px}
+.header h1{font-size:32px;font-weight:900;letter-spacing:-0.5px;margin-bottom:8px}
+.header p{font-size:16px;opacity:.8;max-width:600px;margin:0 auto 16px}
+.header-sub{font-size:12px;opacity:.6;font-style:italic}
+
+/* TRUST BAR */
+.trust{background:#1E293B;padding:14px 24px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.trust-item{color:#94A3B8;font-size:12px;font-weight:600;letter-spacing:.5px;text-align:center}
+.trust-item span{display:block;color:#F8FAFC;font-size:14px;font-weight:800;margin-bottom:2px}
+
+/* MAIN */
+.container{max-width:860px;margin:0 auto;padding:40px 20px}
+
+/* ALERT BOX */
+.alert{background:#EFF6FF;border-left:4px solid #1E40AF;border-radius:8px;padding:16px 20px;margin-bottom:32px}
+.alert strong{color:#1E40AF;font-size:14px}
+.alert p{color:#1E40AF;font-size:13px;margin-top:4px;opacity:.85}
+
+/* SECTION */
+.section{margin-bottom:40px}
+.section-title{font-size:11px;font-weight:800;letter-spacing:1.5px;color:#64748B;text-transform:uppercase;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #E2E8F0}
+
+/* OFFERING CARD */
+.offering{background:#fff;border-radius:16px;border:1px solid #E2E8F0;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:16px}
+.offering-header{background:linear-gradient(135deg,#1E40AF,#3B82F6);padding:20px 24px;color:#fff}
+.offering-header h3{font-size:18px;font-weight:800;margin-bottom:4px}
+.offering-header p{font-size:13px;opacity:.85}
+.offering-body{padding:24px}
+.price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:16px}
+.price{font-size:36px;font-weight:900;color:#1E40AF}
+.price-label{font-size:13px;color:#64748B}
+.includes{list-style:none;margin-bottom:20px}
+.includes li{font-size:14px;color:#334155;padding:6px 0;border-bottom:1px solid #F1F5F9;display:flex;align-items:flex-start;gap:8px}
+.includes li:last-child{border-bottom:none}
+.check{color:#10B981;font-weight:800;flex-shrink:0}
+.cta{display:block;background:#1E40AF;color:#fff;text-align:center;padding:14px 24px;border-radius:10px;font-size:15px;font-weight:800;text-decoration:none;letter-spacing:.3px;transition:background .2s}
+.cta:hover{background:#1E3A8A}
+.cta-secondary{display:block;background:transparent;color:#1E40AF;text-align:center;padding:12px 24px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;border:2px solid #1E40AF;margin-top:10px;transition:all .2s}
+.cta-secondary:hover{background:#EFF6FF}
+
+/* METRICS GRID */
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px}
+@media(max-width:600px){.metrics{grid-template-columns:repeat(2,1fr)}}
+.metric{background:#fff;border-radius:12px;border:1px solid #E2E8F0;padding:16px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+.metric-val{font-size:24px;font-weight:900;color:#1E40AF;line-height:1;margin-bottom:4px}
+.metric-label{font-size:11px;color:#64748B;font-weight:600;letter-spacing:.5px}
+
+/* COMPARISON TABLE */
+.table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #E2E8F0;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+.table th{background:#1E40AF;color:#fff;font-size:12px;font-weight:800;letter-spacing:.5px;padding:12px 16px;text-align:left}
+.table td{padding:12px 16px;font-size:13px;border-bottom:1px solid #F1F5F9;color:#334155}
+.table tr:last-child td{border-bottom:none}
+.table tr:nth-child(even) td{background:#F8FAFC}
+.yes{color:#10B981;font-weight:800}
+.no{color:#EF4444;font-weight:800}
+.highlight td{background:#EFF6FF!important;font-weight:700}
+
+/* LINKS GRID */
+.links{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:500px){.links{grid-template-columns:1fr}}
+.link-card{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;text-decoration:none;transition:all .2s;display:block}
+.link-card:hover{border-color:#1E40AF;box-shadow:0 4px 12px rgba(30,64,175,.1)}
+.link-label{font-size:10px;font-weight:800;letter-spacing:1px;color:#64748B;text-transform:uppercase;margin-bottom:4px}
+.link-title{font-size:14px;font-weight:700;color:#1E40AF}
+.link-desc{font-size:12px;color:#64748B;margin-top:2px}
+
+/* CONTACT */
+.contact{background:#0F172A;border-radius:16px;padding:32px;text-align:center;color:#fff}
+.contact h3{font-size:20px;font-weight:800;margin-bottom:8px}
+.contact p{opacity:.7;font-size:14px;margin-bottom:20px}
+.contact-email{font-size:16px;font-weight:700;color:#60A5FA;text-decoration:none}
+.contact-info{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:16px;font-size:12px;opacity:.6}
+
+/* DISCLAIMER */
+.disclaimer{font-size:11px;color:#94A3B8;text-align:center;margin-top:24px;line-height:1.6}
+
+/* STATUS */
+.status-dot{width:8px;height:8px;background:#10B981;border-radius:50%;display:inline-block;margin-right:6px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="badge">TRADEWINDS SOLUTION 5-26-2464</div>
+  <h1>Phoenix-UCC v7.3</h1>
+  <p>Predictive Cryogenic Control Architecture for Quantum Systems<br>
+  Synthesizable VHDL-2008 · Zero DSP Blocks · Qubit-Agnostic</p>
+  <p class="header-sub">
+    <span class="status-dot"></span>
+    Live simulation: edaplayground.com/x/WgGQ &nbsp;|&nbsp;
+    Digital twin operational 3+ months &nbsp;|&nbsp;
+    USPTO #63/914,860
+  </p>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="trust-item"><span>0</span>Quench Events</div>
+  <div class="trust-item"><span>176,230</span>Validation Cycles</div>
+  <div class="trust-item"><span>90 ns</span>Predictive Lead Time</div>
+  <div class="trust-item"><span>5.83 uK</span>RMSE</div>
+  <div class="trust-item"><span>0</span>DSP Blocks</div>
+  <div class="trust-item"><span>4</span>Qubit Technologies</div>
+</div>
+
+<div class="container">
+
+  <!-- ALERT -->
+  <div class="alert">
+    <strong>Government Purchase Card (GPC) Compatible (Under $10k Threshold)</strong>
+    <p>This single-seat evaluation offering is structured for rapid procurement under standard micro-purchase thresholds. The unit pricing permits multi-license acquisition via a single GPC transaction.</p>
+  </div>
+
+  <!-- OFFERINGS -->
+  <div class="section">
+    <div class="section-title">Acquisition Pathways</div>
+
+    <!-- TIER 1 -->
+    <div class="offering">
+      <div class="offering-header">
+        <h3>Single-Seat Evaluation License — IP Core</h3>
+        <p>Firm Fixed Price · GPC Compatible · Immediate Delivery</p>
+      </div>
+      <div class="offering-body">
+        <div class="price-row">
+          <div class="price">$4,750</div>
+          <div class="price-label">USD · Single-Seat · One-time · FAR 52.227</div>
+        </div>
+        <ul class="includes">
+          <li><span class="check">✓</span> Synthesizable VHDL-2008 RTL source code (Phoenix-UCC v7.3)</li>
+          <li><span class="check">✓</span> Individual workstation deployment authorization</li>
+          <li><span class="check">✓</span> Full technical integration documentation and AXI4-Lite spec</li>
+          <li><span class="check">✓</span> Validated simulation logs (Aldec Riviera-PRO 2025.04)</li>
+          <li><span class="check">✓</span> 30-day dedicated engineering support via email</li>
+          <li><span class="check">✓</span> Secure delivery within 5 business days post-NDA execution</li>
+        </ul>
+        <a href="mailto:gustavoenriquegaray121@gmail.com?subject=Phoenix-UCC%20Evaluation%20License%20%E2%80%94%20GPC%20Purchase&body=Organization%3A%0APoint%20of%20Contact%3A%0APhone%3A%0AFPGA%20Platform%20(AMD%2C%20Microchip%2C%20Intel)%3A%0AIntended%20Application%3A" class="cta">
+          Request Evaluation License — $4,750 USD
+        </a>
+        <a href="mailto:gustavoenriquegaray121@gmail.com?subject=Phoenix-UCC%20Technical%20Questions" class="cta-secondary">
+          Ask a Technical Question First
+        </a>
+      </div>
+    </div>
+
+    <!-- TIER 2 -->
+    <div class="offering">
+      <div class="offering-header" style="background:linear-gradient(135deg,#065F46,#10B981)">
+        <h3>Joint Validation — CRADA / T&M</h3>
+        <p>Time and Materials · FPGA Hardware-in-Loop Testing · TRL 4 to TRL 5</p>
+      </div>
+      <div class="offering-body">
+        <div class="price-row">
+          <div class="price" style="color:#065F46">Custom</div>
+          <div class="price-label">6-month scope · Negotiated labor rates</div>
+        </div>
+        <ul class="includes">
+          <li><span class="check">✓</span> FPGA bitstream generation for target platform (AMD UltraScale+, Microchip PolarFire)</li>
+          <li><span class="check">✓</span> Hardware-in-loop validation in DoW-relevant environment</li>
+          <li><span class="check">✓</span> TRL 3 to TRL 5 transition documentation</li>
+          <li><span class="check">✓</span> Co-authored validation report for program office</li>
+          <li><span class="check">✓</span> SBIR Phase I pathway support</li>
+          <li><span class="check">✓</span> Available under CRADA (no-funds-exchanged model available)</li>
+        </ul>
+        <a href="mailto:gustavoenriquegaray121@gmail.com?subject=Phoenix-UCC%20CRADA%20%2F%20T%26M%20Inquiry&body=Organization%3A%0APoint%20of%20Contact%3A%0AProgram%20Office%3A%0AFPGA%20Lab%20Available%3A%20Yes%20%2F%20No%0ATimeline%3A" class="cta" style="background:#065F46">
+          Inquire — CRADA / T&M Engagement
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALIDATED METRICS -->
+  <div class="section">
+    <div class="section-title">Validated Performance Metrics</div>
+    <div class="metrics">
+      <div class="metric"><div class="metric-val">0</div><div class="metric-label">Quench Events</div></div>
+      <div class="metric"><div class="metric-val">90 ns</div><div class="metric-label">Predictive Lead Time</div></div>
+      <div class="metric"><div class="metric-val">5.83 uK</div><div class="metric-label">RMSE</div></div>
+      <div class="metric"><div class="metric-val">176K</div><div class="metric-label">Stress Cycles</div></div>
+      <div class="metric"><div class="metric-val">0</div><div class="metric-label">DSP Blocks</div></div>
+      <div class="metric"><div class="metric-val">4</div><div class="metric-label">Qubit Technologies</div></div>
+    </div>
+  </div>
+
+  <!-- COMPARISON -->
+  <div class="section">
+    <div class="section-title">Competitive Comparison</div>
+    <table class="table">
+      <tr>
+        <th>Capability</th>
+        <th>Standard PID / Reactive</th>
+        <th>CPU/GPU MPC</th>
+        <th>Phoenix-UCC v7.3</th>
+      </tr>
+      <tr>
+        <td>Predictive pre-threshold control</td>
+        <td>X No</td>
+        <td>X No</td>
+        <td>✓ Yes (90 ns)</td>
+      </tr>
+      <tr>
+        <td>Zero DSP blocks</td>
+        <td>X No</td>
+        <td>X No</td>
+        <td>✓ Yes</td>
+      </tr>
+      <tr class="highlight">
+        <td>Qubit-agnostic</td>
+        <td>X No</td>
+        <td>X No</td>
+        <td>✓ Yes (4 technologies)</td>
+      </tr>
+      <tr>
+        <td>AXI4-Lite deployable</td>
+        <td>X No</td>
+        <td>X No</td>
+        <td>✓ Yes</td>
+      </tr>
+      <tr>
+        <td>Open simulation reproducibility</td>
+        <td>X No</td>
+        <td>X No</td>
+        <td>✓ Yes (EDA Playground)</td>
+      </tr>
+      <tr>
+        <td>Reaction time</td>
+        <td>Milliseconds (after event)</td>
+        <td>&gt;1 ms (software latency)</td>
+        <td>10 ns pipeline</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- DEEP DIVE LINKS -->
+  <div class="section">
+    <div class="section-title">Deep-Dive Documentation & Validation</div>
+    <div class="links">
+      <a href="https://edaplayground.com/x/WgGQ" target="_blank" class="link-card">
+        <div class="link-label">Live Simulation</div>
+        <div class="link-title">EDA Playground — v7.3</div>
+        <div class="link-desc">Run the simulation in your browser. No install required.</div>
+      </a>
+      <a href="https://doi.org/10.5281/zenodo.18930239" target="_blank" class="link-card">
+        <div class="link-label">Technical Archive</div>
+        <div class="link-title">Zenodo DOI 10.5281/zenodo.18930239</div>
+        <div class="link-desc">Peer-citable, date-stamped validation report.</div>
+      </a>
+      <a href="https://codepen.io/Gustavo-Enrique-Garay/pen/YPGGEgY" target="_blank" class="link-card">
+        <div class="link-label">Digital Twin</div>
+        <div class="link-title">Live Dashboard — 3+ months operational</div>
+        <div class="link-desc">Real-time visualization of Phoenix-UCC behavior.</div>
+      </a>
+      <a href="https://edaplayground.com/x/BVab" target="_blank" class="link-card">
+        <div class="link-label">Agnostic Validation</div>
+        <div class="link-title">4 Qubit Technologies — Single Controller</div>
+        <div class="link-desc">Transmon, Trapped Ion, Photonic, Silicon Spin.</div>
+      </a>
+      <a href="https://edaplayground.com/x/W8Sv" target="_blank" class="link-card">
+        <div class="link-label">Robotics Domain</div>
+        <div class="link-title">Substrate Validation — +100 ns Logic Advantage</div>
+        <div class="link-desc">Same algorithm applied to robotic substrate control.</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- INDEPENDENT VALIDATION -->
+  <div class="section">
+    <div class="section-title">Independent Validation Summary</div>
+    <table class="table">
+      <tr>
+        <th>Validation Layer</th>
+        <th>What It Confirms</th>
+      </tr>
+      <tr>
+        <td>Aldec Riviera-PRO 2025.04</td>
+        <td>0 errors, 0 warnings across 176,230 stress cycles — industry-standard HDL simulator</td>
+      </tr>
+      <tr>
+        <td>EDA Playground (public)</td>
+        <td>Any engineer globally can run and verify results without installing software</td>
+      </tr>
+      <tr>
+        <td>Zenodo DOI 10.5281/zenodo.18930239</td>
+        <td>Date-stamped, permanently citable technical archive</td>
+      </tr>
+      <tr>
+        <td>USPTO Provisional #63/914,860</td>
+        <td>Legal prior art. Filed November 10, 2025. Independently examined.</td>
+      </tr>
+      <tr>
+        <td>DoD Tradewinds Evaluation</td>
+        <td>External DoW evaluators rated Problem, Solution, and State of the Art as Acceptable</td>
+      </tr>
+      <tr>
+        <td>Digital Twin (3+ months live)</td>
+        <td>Continuous real-time operation visible to any observer</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact">
+    <h3>Ready to Evaluate Phoenix-UCC?</h3>
+    <p>All simulation data available for independent review.<br>
+    RTL source delivered under NDA within 5 business days of GPC authorization.</p>
+    <a href="mailto:gustavoenriquegaray121@gmail.com?subject=Phoenix-UCC%20v7.3%20-%20Government%20Acquisition%20Inquiry" class="contact-email">
+      gustavoenriquegaray121@gmail.com
+    </a>
+    <div class="contact-info">
+      <span>ALTEA-GARAY HTS Quantum Infrastructure</span>
+      <span>Monterrey, N.L., México</span>
+      <span>USPTO #63/914,860</span>
+      <span>Non-Traditional Defense Contractor</span>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    This offering is structured for U.S. Government acquisition under FAR Part 12 (Commercial Items) and FAR 52.227 (Rights in Technical Data).
+    Micro-purchase threshold compliance is the responsibility of the acquiring agency.
+    All links to simulation data are publicly accessible without login.
+    Source code delivered under executed NDA only.
+  </div>
+
+</div>
+</body>
+</html>
