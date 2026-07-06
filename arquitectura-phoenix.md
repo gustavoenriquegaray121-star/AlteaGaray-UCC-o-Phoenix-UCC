@@ -4,14 +4,14 @@
 graph TD
 A[Sensores Criogénicos] --> B[Interfaz AXI4-Lite]
 B --> C[Filtro Binomial Multitap]
-C --> D[PHSE Core<br/>Estimación de Estado Homeostático Predictivo]
+C --> D[PHSE Core Estimación de Estado Homeostático Predictivo]
 D --> E[Predictor Híbrido Binomial]
-E --> F[Analizador de Trayectoria<br/>(Velocidad + Sacudida)]
+E --> F[Analizador de Trayectoria: Velocidad + Sacudida]
 F --> G[Índice de Estabilidad Homeostática]
 G --> H{Riesgo de Quench?}
 H -->|Sí| I[Alerta Predictiva + Acción Preventiva]
 H -->|No| J[Control Estándar]
-I --> K[Controlador de Vigilancia<br/>Degradación Segura<br/>Respaldo PID]
+I --> K[Controlador de Vigilancia: Degradación Segura / Respaldo PID]
 J --> K
 K --> L[Actuadores Criogénicos]
 
