@@ -1,12 +1,10 @@
 flowchart TD
-    A[Adquisición de Datos Multi-canal] --> B[Filtrado Binomial 4-tap]
-    B --> C[Cálculo de Derivadas Temporales]
+    A[Adquisición Datos] --> B[Filtrado 4-tap]
+    B --> C[Derivadas]
     C --> D[PHSE Core]
-    D --> E[Predicción de Trayectoria 90 ns]
-    E --> F[Análisis de Velocidad + Jerk]
-    F --> G[Índice de Estabilidad]
-    G --> H{Desviación Predictiva?}
-    H -->|Sí| I[Alerta Temprana + Intervención]
-    H -->|No| J[Monitoreo Continuo]
-    I --> K[Registro en Gemelo Digital]
-    J --> K
+    D --> E[Predicción 90ns]
+    E --> F[Velocidad + Jerk]
+    F --> G[Índice Estabilidad]
+    G --> H{Desviación?}
+    H -->|Sí| I[Alerta]
+    H -->|No| J[Continuar]
