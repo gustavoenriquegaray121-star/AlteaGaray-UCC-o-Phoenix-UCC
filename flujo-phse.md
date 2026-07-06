@@ -1,14 +1,16 @@
-# Flujo Interno del PHSE Core
+graph LR
+    subgraph Reactivo ["Sistemas Convencionales (Reactive)"]
+        A[Medición] --> B[Umbral Excedido?]
+        B -->|No| A
+        B -->|Sí| C[Alarma + Protección]
+        C --> D[Recuperación Lenta<br/>24-72 horas]
+    end
 
-```mermaid
-flowchart TD
-A[Adquisición de Datos Multi-canal] --> B[Filtrado Binomial 4-tap]
-B --> C[Cálculo de Derivadas Temporales]
-C --> D[PHSE Core<br/>Estimación de Estado Homeostático Predictivo]
-D --> E[Predicción de Trayectoria<br/>Horizonte 90 ns]
-E --> F[Análisis de Velocidad + Sacudida]
-F --> G[Cálculo de Índice de Estabilidad]
-H{¿Desviación Predictiva?} -->|Sí| I[Alerta Temprana + Intervención]
-H -->|No| J[Monitoreo Continuo]
-I --> K[Registro y Sincronización con Gemelo Digital]
-J --> K
+    subgraph Predictivo ["Phoenix-UCC (Predictive)"]
+        E[Medición Continua] --> F[PHSE Core]
+        F --> G{¿Trayectoria hacia Quench?}
+        G -->|Sí| H[Preventive Thermal Stabilization]
+        G -->|No| E
+    end
+
+    style Predictivo fill:#166534,stroke:#4ade80
